@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
 @theme {
-  --color-parchment: #f5efe6;
-  --color-surface: #ebe3d6;
-  --color-surface-dark: #1a1210;
-  --color-ink: #2c1810;
-  --color-ink-muted: #6b5744;
-  --color-copper: #c2742f;
-  --color-copper-light: #d4873a;
-  --color-copper-dim: #a05e24;
-  --color-verdigris: #4a8f89;
-  --color-verdigris-light: #5ca8a1;
-  --color-rule: #d4c8b8;
-  --color-rule-light: #e2d9cd;
+  --color-parchment: #f3ece1;
+  --color-surface: #e6dccb;
+  --color-surface-dark: #15100c;
+  --color-ink: #231510;
+  --color-ink-muted: #5e4a38;
+  --color-copper: #b5651d;
+  --color-copper-light: #cd7a2e;
+  --color-copper-dim: #8f4f16;
+  --color-verdigris: #3d8580;
+  --color-verdigris-light: #4f9c96;
+  --color-rule: #cdbfad;
+  --color-rule-light: #ddd2c3;
 
   --font-display: "Playfair Display", "Georgia", serif;
   --font-body: "Outfit", "Helvetica Neue", sans-serif;
@@ -64,19 +64,19 @@ body::before {
 .reveal-delay-7 { transition-delay: 0.56s; }
 
 /* Code syntax highlighting tokens */
-.token-keyword { color: #d4873a; }
-.token-string { color: #5ca8a1; }
+.token-keyword { color: #cd7a2e; }
+.token-string { color: #4f9c96; }
 .token-comment { color: #7a6b5d; font-style: italic; }
-.token-type { color: #c2742f; }
+.token-type { color: #b5651d; }
 .token-fn { color: #e7ddd0; }
-.token-macro { color: #d4873a; }
+.token-macro { color: #cd7a2e; }
 .token-punct { color: #8a7b6d; }
 .token-attr { color: #9a8b7d; }
-.token-lifetime { color: #4a8f89; }
+.token-lifetime { color: #3d8580; }
 
 /* Custom selection color */
 ::selection {
-  background-color: rgba(194, 116, 47, 0.25);
+  background-color: rgba(181, 101, 29, 0.25);
   color: var(--color-ink);
 }
 
