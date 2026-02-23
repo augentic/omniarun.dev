@@ -2,7 +2,8 @@ import { defineConfig } from 'astro/config';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://omniarun.dev',
+  site: 'https://augentic.github.io',
+  base: '/omniarun.dev/',
   vite: {
     plugins: [tailwindcss()],
   },
