@@ -1,0 +1,102 @@
+---
+---
+
+<section id="about" class="relative py-24 sm:py-32">
+  <!-- Divider -->
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="mb-20 h-px bg-gradient-to-r from-transparent via-rule to-transparent"></div>
+  </div>
+
+  <div class="mx-auto max-w-6xl px-6 lg:px-8">
+    <div class="grid gap-16 lg:grid-cols-[1fr_1.2fr] lg:gap-20 items-center">
+      <!-- Left: text -->
+      <div>
+        <p class="reveal mb-3 font-mono text-xs font-medium uppercase tracking-[0.2em] text-copper">
+          The Runtime
+        </p>
+        <h2 class="reveal reveal-delay-1 font-display text-3xl font-bold leading-tight tracking-tight sm:text-4xl">
+          Host services,<br/>
+          <span class="text-copper italic">without</span> the host risk.
+        </h2>
+        <div class="reveal reveal-delay-2 mt-6 space-y-4 text-base leading-relaxed text-ink-muted sm:text-lg">
+          <p>
+            Agent-generated code needs to call APIs, store state, publish messages,
+            and query databases. But running untrusted code with direct access to
+            your infrastructure is a non-starter.
+          </p>
+          <p>
+            Omnia bridges this gap. It compiles your Rust handlers to
+            <strong class="text-ink font-medium">wasm32-wasip2</strong> components and runs them
+            inside a sandboxed Wasmtime runtime — where every external operation
+            routes through typed provider traits that <em>you</em> control.
+          </p>
+          <p>
+            No direct network access. No filesystem. No env vars.
+            Just capability-scoped interfaces that your guest code asks for
+            and the runtime decides whether to grant.
+          </p>
+        </div>
+      </div>
+
+      <!-- Right: architecture diagram -->
+      <div class="reveal reveal-delay-3">
+        <div class="relative rounded-2xl border border-rule bg-surface p-8 sm:p-10">
+          <!-- Title -->
+          <p class="mb-8 font-mono text-[11px] uppercase tracking-[0.15em] text-ink-muted">
+            Runtime Architecture
+          </p>
+          <!-- Flow diagram -->
+          <div class="flex flex-col items-center gap-0">
+            <!-- Agent code -->
+            <div class="w-full max-w-xs rounded-lg border border-copper/30 bg-copper/5 px-5 py-3 text-center">
+              <span class="font-mono text-sm font-medium text-copper">Agent Code</span>
+              <span class="mt-0.5 block text-xs text-ink-muted">Rust handlers</span>
+            </div>
+            <!-- Arrow -->
+            <div class="flex flex-col items-center">
+              <div class="h-6 w-px bg-rule"></div>
+              <svg class="h-3 w-3 text-rule" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6 12L0 4h12z"/>
+              </svg>
+            </div>
+            <!-- WASM compile -->
+            <div class="w-full max-w-xs rounded-lg border border-rule bg-parchment px-5 py-3 text-center">
+              <span class="font-mono text-sm font-medium text-ink">WASM Component</span>
+              <span class="mt-0.5 block text-xs text-ink-muted">wasm32-wasip2</span>
+            </div>
+            <!-- Arrow -->
+            <div class="flex flex-col items-center">
+              <div class="h-6 w-px bg-rule"></div>
+              <svg class="h-3 w-3 text-rule" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6 12L0 4h12z"/>
+              </svg>
+            </div>
+            <!-- Runtime -->
+            <div class="w-full max-w-sm rounded-xl border-2 border-copper/50 bg-copper/8 px-6 py-4 text-center shadow-sm">
+              <span class="font-display text-lg font-bold text-copper">Omnia Runtime</span>
+              <span class="mt-0.5 block text-xs text-ink-muted">Wasmtime sandbox</span>
+            </div>
+            <!-- Arrow branches -->
+            <div class="flex flex-col items-center">
+              <div class="h-6 w-px bg-rule"></div>
+              <svg class="h-3 w-3 text-rule" viewBox="0 0 12 12" fill="currentColor">
+                <path d="M6 12L0 4h12z"/>
+              </svg>
+            </div>
+            <!-- Host services -->
+            <div class="grid w-full max-w-md grid-cols-3 gap-2">
+              {["HTTP", "State", "SQL", "Auth", "Events", "Config"].map((label) => (
+                <div class="rounded-md border border-verdigris/20 bg-verdigris/5 px-2 py-2 text-center">
+                  <span class="font-mono text-xs font-medium text-verdigris">{label}</span>
+                </div>
+              ))}
+            </div>
+            <p class="mt-3 font-mono text-[10px] uppercase tracking-widest text-ink-muted">
+              Host Services · Provider Traits
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
